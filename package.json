@@ -1,0 +1,25 @@
+{
+  "name": "r2d2-coruscant",
+  "version": "1.0.0",
+  "description": "> Api desenvolvida em NodeJS para consultar e gerenciar informações do universo Star Wars consumindo serviços de terceiros e próprios\r -\tDesenvolver API em NodeJS\r \t-\tRequisições para:\r \t\t-\tFilmes \r \t\t\t-\tLer\r \t\t\t-\tInserir\r \t\t\t-\tAlterar\r \t\t\t-\tDeletar\r \t\t-\tSwapi\r \t\t\t-\tEspécies\r \t\t\t-\tPlanetas\r \t\t\t-\tPersonagens\r \t\t\t-\tNaves \r \t\t\t-\tVeículos\r \t-\tTodas as requisições devem ter o padrão *\"/api/\"*\r \t\t-\tmovies\r \t\t-\tplanets\r \t\t-\tspaceships\r \t\t-\tvehicles\r \t\t-\tspecies\r \t\t-\tpeople\t\r \t-\tTodas as requisições de ***Listagem*** devem seguir o seguinte padrão:\r \t\t-\t```javascript\r \t\t\t//api/people\r \t\t\t{ \r \t\t\t\t\"count\": 1,\r \t\t\t\t\"data\": [\r \t\t\t\t\t\t\t{\r \t\t\t\t\t\t\t\t\"name\": \"Luke Skywalker\"\r \t\t\t\t\t\t\t}\r \t\t\t\t\t\t] \r \t\t\t}\r \t\t\t```",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Iniciativa-Padawan/r2d2-coruscant.git"
+  },
+  "keywords": [
+    "r2d2",
+    "star",
+    "wars",
+    "api"
+  ],
+  "author": "Paulo Maia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Iniciativa-Padawan/r2d2-coruscant/issues"
+  },
+  "homepage": "https://github.com/Iniciativa-Padawan/r2d2-coruscant#readme"
+}
