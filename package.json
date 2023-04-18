@@ -1,0 +1,27 @@
+{
+  "name": "r2d2-coruscant",
+  "version": "1.0.0",
+  "description": "api sobre star wars",
+  "main": "app.js",
+  "scripts": {
+    "start": "npm install && node app.js",
+    "dev": "npm install && nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Iniciativa-Padawan/r2d2-coruscant.git"
+  },
+  "keywords": [
+    "r2d2",
+    "star wars"
+  ],
+  "author": "Adailton Henrique",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Iniciativa-Padawan/r2d2-coruscant/issues"
+  },
+  "homepage": "https://github.com/Iniciativa-Padawan/r2d2-coruscant#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
