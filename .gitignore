@@ -6,8 +6,11 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
-#History
+# History
 .history
+
+# Thunder Client
+thunder-tests/thunderActivity.json
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json

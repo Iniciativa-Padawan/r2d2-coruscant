@@ -1,0 +1,17 @@
+[
+  {
+    "_id": "e783d3ce-4f9a-48b5-b167-992d18e80b8d",
+    "colName": "star wars api",
+    "created": "2023-04-24T23:31:33.383Z",
+    "sortNum": 10000,
+    "folders": [
+      {
+        "_id": "c966c619-79fc-48eb-9afc-036255cf2eb4",
+        "name": "movies",
+        "containerId": "",
+        "created": "2023-04-24T23:32:25.080Z",
+        "sortNum": 10000
+      }
+    ]
+  }
+]
