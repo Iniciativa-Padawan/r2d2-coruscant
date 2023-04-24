@@ -4,12 +4,14 @@
     "colId": "e783d3ce-4f9a-48b5-b167-992d18e80b8d",
     "containerId": "",
     "name": "movies",
-    "url": "",
+    "url": "localhost:3000/movies",
     "method": "GET",
     "sortNum": 10000,
     "created": "2023-04-24T23:31:38.212Z",
-    "modified": "2023-04-24T23:31:38.212Z",
-    "headers": []
+    "modified": "2023-04-24T23:36:18.772Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   },
   {
     "_id": "7cba6074-353d-4949-8533-024690a0dedb",
