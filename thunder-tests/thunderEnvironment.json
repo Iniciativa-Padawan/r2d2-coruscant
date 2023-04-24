@@ -1,14 +1,5 @@
 [
   {
-    "_id": "78ebc3f7-5841-4971-a9c6-13498f0b97f2",
-    "name": "local",
-    "default": false,
-    "sortNum": 10000,
-    "created": "2023-04-24T23:41:29.384Z",
-    "modified": "2023-04-24T23:41:29.384Z",
-    "data": []
-  },
-  {
     "_id": "ba8817f4-5bcc-4c9a-9e59-3d896b054c78",
     "name": "local",
     "default": true,
@@ -21,14 +12,5 @@
         "value": "http://localhost:3000"
       }
     ]
-  },
-  {
-    "_id": "43c5727e-a90a-4740-ad27-70627d8698d7",
-    "name": "local",
-    "default": false,
-    "sortNum": 20000,
-    "created": "2023-04-24T23:43:22.760Z",
-    "modified": "2023-04-24T23:43:22.760Z",
-    "data": []
   }
 ]
