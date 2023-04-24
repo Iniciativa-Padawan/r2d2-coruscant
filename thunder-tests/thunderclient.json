@@ -1,0 +1,43 @@
+[
+  {
+    "_id": "2966b594-559c-439e-ad13-3decb88331ba",
+    "colId": "d5595a9b-3f55-492d-af8c-39c13635fe90",
+    "containerId": "",
+    "name": "rota raiz",
+    "url": "{{url}}",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2023-04-24T22:45:04.316Z",
+    "modified": "2023-04-24T22:52:51.715Z",
+    "headers": [],
+    "params": [],
+    "tests": [
+      {
+        "type": "res-code",
+        "custom": "",
+        "action": "equal",
+        "value": "200"
+      },
+      {
+        "type": "res-time",
+        "custom": "",
+        "action": "<",
+        "value": "20"
+      }
+    ]
+  },
+  {
+    "_id": "083a8396-7f59-49be-932e-75d916ce0b0d",
+    "colId": "d5595a9b-3f55-492d-af8c-39c13635fe90",
+    "containerId": "",
+    "name": "movies",
+    "url": "{{url}}/movies",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2023-04-24T22:50:03.943Z",
+    "modified": "2023-04-24T22:53:00.341Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]
