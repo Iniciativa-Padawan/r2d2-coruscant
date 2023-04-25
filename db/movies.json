@@ -1,0 +1,68 @@
+[
+  {
+    "nome": "A Ameaça Fantasma",
+    "anoLancamento": 1999,
+    "sequencial": 1,
+    "trilogia": "Prequela"
+  },
+  {
+    "nome": "Ataque dos Clones",
+    "anoLancamento": 2002,
+    "sequencial": 2,
+    "trilogia": "Prequela"
+  },
+  {
+    "nome": "A Vingança dos Sith",
+    "anoLancamento": 2005,
+    "sequencial": 3,
+    "trilogia": "Prequela"
+  },
+  {
+    "nome": "Solo: Uma História Star Wars",
+    "anoLancamento": 2018,
+    "sequencial": 4,
+    "trilogia": "Spin-off"
+  },
+  {
+    "nome": "Rogue One: Uma História Star Wars",
+    "anoLancamento": 2016,
+    "sequencial": 5,
+    "trilogia": "Spin-off"
+  },
+  {
+    "nome": "Uma nova esperança",
+    "anoLancamento": 1977,
+    "sequencial": 6,
+    "trilogia": "Clássica"
+  },
+  {
+    "nome": "O Império Contra-Ataca",
+    "anoLancamento": 1980,
+    "sequencial": 7,
+    "trilogia": "Clássica"
+  },
+  {
+    "nome": "O Retorno de Jedi",
+    "anoLancamento": 1983,
+    "sequencial": 8,
+    "trilogia": "Clássica"
+  },
+  {
+    "nome": "O Despertar da Força",
+    "anoLancamento": 2015,
+    "sequencial": 9,
+    "trilogia": "Sequela"
+  },
+  {
+    "nome": "Os Últimos Jedi",
+    "anoLancamento": 2017,
+    "sequencial": 10,
+    "trilogia": "Sequela"
+  },
+  {
+    "nome": "The Rise of Skywalker",
+    "anoLancamento": 2019,
+    "sequencial": 11,
+    "trilogia": "Sequela"
+  }
+]
