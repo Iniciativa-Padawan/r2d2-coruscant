@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 //baseados no parametro da rota, filtrar a trilogia na lista e retorná-la
+//se buscar uma trilogia que não existe usar o padrão http 404 not found para a resposta
 //array.filter
 router.get('/movies/trilogy/:trilogy', (req, res) => {
   res.send(req.params.trilogy)
