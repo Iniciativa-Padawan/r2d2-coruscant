@@ -81,5 +81,19 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "ec473cbf-c5c1-4d5a-9eb0-5087a210d28b",
+    "colId": "d5595a9b-3f55-492d-af8c-39c13635fe90",
+    "containerId": "5c8e9430-b940-4037-bd06-2edb9f8e197e",
+    "name": "trilogy",
+    "url": "{{url}}/{{modulo}}/movies/trilogy/variavel",
+    "method": "GET",
+    "sortNum": 50000,
+    "created": "2023-04-25T00:48:23.027Z",
+    "modified": "2023-04-25T00:49:37.990Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]

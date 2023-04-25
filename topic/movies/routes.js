@@ -2,21 +2,24 @@ const controller = require('./controller')
 const express = require("express");
 const router = express.Router();
 
-// requisição da lista
+//baseados no parametro da rota, filtrar a trilogia na lista e retorná-la
+//array.filter
+router.get('/movies/trilogy/:trilogy', (req, res) => {
+  res.send(req.params.trilogy)
+})
+
 router.get('/movies', (req, res) => {
   res.send(controller.getMovies())
 })
 
-// requisição ordem alfabética
 router.get('/movies/alphabetical', (req, res) => {
   res.send(controller.ordemAlfabetica())
 })
 
-// requisição ordem sequencial
 router.get('/movies/sequential', (req, res) => {
   res.send(controller.ordemSequencial())
 })
-//requisição ordem lançamento
+
 router.get('/movies/movie-release', (req, res) => {
   res.send(controller.ordemLancamento())
 })
