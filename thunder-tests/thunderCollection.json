@@ -4,6 +4,15 @@
     "colName": "star wars api",
     "created": "2023-04-24T22:43:29.517Z",
     "sortNum": 10000,
-    "folders": []
+    "folders": [
+      {
+        "_id": "5c8e9430-b940-4037-bd06-2edb9f8e197e",
+        "name": "movies",
+        "containerId": "",
+        "created": "2023-04-24T23:57:37.498Z",
+        "sortNum": 10000
+      }
+    ],
+    "settings": {}
   }
 ]
