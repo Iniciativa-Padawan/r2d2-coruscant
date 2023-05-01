@@ -2,8 +2,6 @@ const functions = require('./functions')
 const express = require('express')
 const router = express.Router()
 
-
-
 // requisição da lista
 router.get('/movies', (req, res) => {
     res.send(functions.todosOsFilmes())

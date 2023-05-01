@@ -4,28 +4,6 @@
     "colName": "movie",
     "created": "2023-04-24T23:33:14.298Z",
     "sortNum": 10000,
-    "folders": [
-      {
-        "_id": "a77c3673-a16e-4ec3-be20-73b0fdb7f127",
-        "name": "alphabetical",
-        "containerId": "",
-        "created": "2023-04-24T23:33:26.122Z",
-        "sortNum": 10000
-      },
-      {
-        "_id": "763bdd23-51a7-4412-b984-3d8599f78cfd",
-        "name": "sequential",
-        "containerId": "",
-        "created": "2023-04-24T23:33:33.827Z",
-        "sortNum": 20000
-      },
-      {
-        "_id": "5af5e140-2558-4dde-992e-91399a5a50e5",
-        "name": "movie-release",
-        "containerId": "",
-        "created": "2023-04-24T23:33:43.930Z",
-        "sortNum": 30000
-      }
-    ]
+    "folders": []
   }
 ]
