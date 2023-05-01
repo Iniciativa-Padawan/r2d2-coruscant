@@ -4,6 +4,10 @@ function getMovies() {
   return movies
 }
 
+const getMoviesByTrilogia = (trilogia) => getMovies().filter(movie => movie.trilogia == trilogia)
+
+const addMovie = (movie) => getMovies().push(movie)
+
 function ordemAlfabetica() {
   const ordemAlfabetica = movies.filter(filme => filme.nomeDoFilme).sort((a, b) => a.nomeDoFilme.localeCompare(b.nomeDoFilme))
 
@@ -26,4 +30,4 @@ function ordemLancamento() {
   return ordemLanc
 }
 
-module.exports = { ordemAlfabetica, ordemLancamento, ordemSequencial, getMovies }
+module.exports = { ordemAlfabetica, ordemLancamento, ordemSequencial, getMovies, getMoviesByTrilogia, addMovie }

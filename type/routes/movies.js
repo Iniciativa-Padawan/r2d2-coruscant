@@ -7,6 +7,15 @@ router.get('/movies', (req, res) => {
   res.send(moviesRepo.getMovies())
 })
 
+router.get('/movies/trilogy/:trilogy', (req, res) => {
+  const movies = moviesRepo.getMoviesByTrilogia(req.params.trilogy)
+
+  if (movies.length == 0)
+    res.status(404).send('Trilogia não encontrada')
+  else
+    res.send(movies)
+})
+
 // requisição ordem alfabética
 router.get('/movies/alphabetical', (req, res) => {
   res.send(moviesRepo.ordemAlfabetica())

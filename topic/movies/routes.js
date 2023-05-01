@@ -1,17 +1,29 @@
+const { clearScreenDown } = require('readline');
 const controller = require('./controller')
 const express = require("express");
 const router = express.Router();
 
-//baseados no parametro da rota, filtrar a trilogia na lista e retorná-la
-//se buscar uma trilogia que não existe usar o padrão http 404 not found para a resposta
-//array.filter
 router.get('/movies/trilogy/:trilogy', (req, res) => {
-  res.send(req.params.trilogy)
+  const movies = controller.getMoviesByTrilogia(req.params.trilogy)
+
+  if (movies.length == 0)
+    res.status(404).send('Trilogia não encontrada')
+  else
+    res.send(movies)
 })
 
 router.get('/movies', (req, res) => {
   res.send(controller.getMovies())
 })
+
+router.post('/movies', (req, res) => {
+  controller.addMovie(req.body)
+
+  res.send(controller.getMovies())
+})
+
+// TIRAR ÚLTIMO ITEM DA LISTA
+router.delete('/movies')
 
 router.get('/movies/alphabetical', (req, res) => {
   res.send(controller.ordemAlfabetica())
