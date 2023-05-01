@@ -54,5 +54,24 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "30d7c48b-2eb9-4549-acc8-3f1972e8e670",
+    "colId": "e02290d2-6bb9-4dc2-b99b-6426480b4439",
+    "containerId": "",
+    "name": "add-movie",
+    "url": "localhost:4000/movies/",
+    "method": "POST",
+    "sortNum": 80000,
+    "created": "2023-05-01T23:21:01.954Z",
+    "modified": "2023-05-01T23:22:28.490Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  'name': 'henrique',\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]

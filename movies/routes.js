@@ -31,7 +31,12 @@ router.get('/movies/trilogy/:trilogy', (req, res) => {
     }else {
         res.send(functions.trilogia(trilogy))
     }
-    
+})
+
+router.post('/movies', (req, res) => {
+    functions.addFilme(req.body)
+
+    res.send(functions.todosOsFilmes())
 })
 
 module.exports = router
