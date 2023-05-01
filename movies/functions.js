@@ -26,4 +26,18 @@ function ordemLancamento() {
     return ordemLanc
 }
 
-module.exports = {todosOsFilmes, ordemAlfabetica, ordemSequencial, ordemLancamento}
+function trilogia(nomeTrilogia) {
+    const trilogiaFiltrada = listaFilmes.filter(filme => filme.trilogy === nomeTrilogia)
+
+    const mapeamentoNome = mapeandoObjeto(trilogiaFiltrada)
+    
+    return mapeamentoNome
+}
+
+function mapeandoObjeto(objetoFiltrado) {
+    return objetoFiltrado.map((filme) => {
+        return filme
+    })
+}
+
+module.exports = {todosOsFilmes, ordemAlfabetica, ordemSequencial, ordemLancamento, trilogia}
