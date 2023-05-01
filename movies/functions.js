@@ -8,6 +8,10 @@ function addFilme(filmeASerAdicionado) {
     listaFilmes.push(filmeASerAdicionado)
 }
 
+function removerFilme() {
+    listaFilmes.pop()
+}
+
 function ordemAlfabetica() {
     const ordemAlfabetica = listaFilmes.filter(filme => filme.name).sort((a, b) => a.name.localeCompare(b.name))
 
@@ -44,4 +48,4 @@ function mapeandoObjeto(objetoFiltrado) {
     })
 }
 
-module.exports = {todosOsFilmes, ordemAlfabetica, ordemSequencial, ordemLancamento, trilogia, addFilme}
+module.exports = {todosOsFilmes, ordemAlfabetica, ordemSequencial, ordemLancamento, trilogia, addFilme, removerFilme}

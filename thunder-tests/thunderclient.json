@@ -64,14 +64,28 @@
     "method": "POST",
     "sortNum": 80000,
     "created": "2023-05-01T23:21:01.954Z",
-    "modified": "2023-05-01T23:22:28.490Z",
+    "modified": "2023-05-01T23:23:17.662Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  'name': 'henrique',\n}",
+      "raw": "{\n  \"name\": \"henrique\"\n}",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "c54dce38-9ec5-4736-a4f2-b25fec1644b8",
+    "colId": "e02290d2-6bb9-4dc2-b99b-6426480b4439",
+    "containerId": "",
+    "name": "delete-movie",
+    "url": "localhost:4000/movies/",
+    "method": "DELETE",
+    "sortNum": 90000,
+    "created": "2023-05-01T23:36:02.343Z",
+    "modified": "2023-05-01T23:36:11.681Z",
+    "headers": [],
+    "params": [],
     "tests": []
   }
 ]

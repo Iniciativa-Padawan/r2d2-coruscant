@@ -39,4 +39,10 @@ router.post('/movies', (req, res) => {
     res.send(functions.todosOsFilmes())
 })
 
+router.delete('/movies', (req, res) => {
+    functions.removerFilme()
+
+    res.send(functions.todosOsFilmes())
+})
+
 module.exports = router
