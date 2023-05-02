@@ -8,6 +8,14 @@ const getMoviesByTrilogia = (trilogia) => getMovies().filter(movie => movie.tril
 
 const addMovie = (movie) => getMovies().push(movie)
 
+const updateMovie = (movie, sequencial) => getMovies().splice(findMovieIndex(sequencial), 1, movie)
+
+const deleteLastMovie = () => getMovies().pop()
+
+const deleteMovieBySequencial = (sequencial) => getMovies().splice(findMovieIndex(sequencial), 1)
+
+const findMovieIndex = (sequencial) => getMovies().findIndex(movie => movie.sequencialFranquia == sequencial)
+
 function ordemAlfabetica() {
   const ordemAlfabetica = movies.filter(filme => filme.nomeDoFilme).sort((a, b) => a.nomeDoFilme.localeCompare(b.nomeDoFilme))
 
@@ -30,4 +38,14 @@ function ordemLancamento() {
   return ordemLanc
 }
 
-module.exports = { ordemAlfabetica, ordemLancamento, ordemSequencial, getMovies, getMoviesByTrilogia, addMovie }
+module.exports = {
+  ordemAlfabetica,
+  ordemLancamento,
+  ordemSequencial,
+  getMovies,
+  getMoviesByTrilogia,
+  addMovie,
+  deleteLastMovie,
+  updateMovie,
+  deleteMovieBySequencial
+}
