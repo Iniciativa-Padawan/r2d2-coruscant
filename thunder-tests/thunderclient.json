@@ -54,5 +54,38 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "39f82bed-634a-4c32-ab01-2fd6795cf57b",
+    "colId": "e783d3ce-4f9a-48b5-b167-992d18e80b8d",
+    "containerId": "",
+    "name": "movies",
+    "url": "{{url}}/movies",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2023-05-01T22:57:56.936Z",
+    "modified": "2023-05-03T22:32:18.040Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "  {\n    \"nomeDoFilme\": \"teste\",\n    \"anoDeLancamento\": 1980,\n    \"sequencialFranquia\": 1,\n    \"trilogia\": \"teste\"\n  }",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "788cccea-1ec2-4fea-920e-4092384e58e8",
+    "colId": "e783d3ce-4f9a-48b5-b167-992d18e80b8d",
+    "containerId": "",
+    "name": "movies",
+    "url": "{{url}}/movies",
+    "method": "DELETE",
+    "sortNum": 30000,
+    "created": "2023-05-01T23:35:47.927Z",
+    "modified": "2023-05-01T23:36:04.998Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]

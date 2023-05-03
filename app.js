@@ -1,8 +1,11 @@
 const express = require("express");
-const router = require("./routes/movies");
-const app = express();
+const bodyParser = require("body-parser");
+const movieRoutesTopic = require("./topic/movies/routes");
 
-app.use(router);
+const app = express();
+app.use(bodyParser.json());
+
+app.use("/topic", movieRoutesTopic);
 
 app.listen(3000, function () {
   console.log("O aplicativo está rodando na porta 3000");
