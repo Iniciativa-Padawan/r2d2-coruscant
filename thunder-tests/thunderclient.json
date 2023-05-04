@@ -64,12 +64,12 @@
     "method": "POST",
     "sortNum": 80000,
     "created": "2023-05-01T23:21:01.954Z",
-    "modified": "2023-05-01T23:23:17.662Z",
+    "modified": "2023-05-04T13:35:10.473Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"henrique\"\n}",
+      "raw": "{\n  \"name\": \"Os Últimos Jedi\",\n  \"year\": 2028,\n  \"sequential\": \"10\",\n  \"trilogy\": \"sequel\"\n}",
       "form": []
     },
     "tests": []
@@ -79,11 +79,11 @@
     "colId": "e02290d2-6bb9-4dc2-b99b-6426480b4439",
     "containerId": "",
     "name": "delete-movie",
-    "url": "localhost:4000/movies/",
+    "url": "localhost:4000/movies/clh94jvvg0000v1psp5fqxwcn",
     "method": "DELETE",
     "sortNum": 90000,
     "created": "2023-05-01T23:36:02.343Z",
-    "modified": "2023-05-01T23:36:11.681Z",
+    "modified": "2023-05-04T13:22:50.735Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -100,6 +100,39 @@
     "modified": "2023-05-02T00:00:45.646Z",
     "headers": [],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "6e5c2d3f-13ca-4dd3-b476-3a3d2f3f8287",
+    "colId": "e02290d2-6bb9-4dc2-b99b-6426480b4439",
+    "containerId": "",
+    "name": "all movies",
+    "url": "localhost:4000/movies/",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2023-05-04T12:36:43.992Z",
+    "modified": "2023-05-04T12:37:09.789Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "476d02ec-e8f1-441b-bc1d-45e7e239f112",
+    "colId": "e02290d2-6bb9-4dc2-b99b-6426480b4439",
+    "containerId": "",
+    "name": "update-movie",
+    "url": "localhost:4000/movies/clh9667sg0002v1zczhl2omqo",
+    "method": "PUT",
+    "sortNum": 120000,
+    "created": "2023-05-04T13:33:10.099Z",
+    "modified": "2023-05-04T13:39:59.662Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"id\": \"clh9667sg0002v1zczhl2omqo\",\n  \"name\": \"Os Últimos Jedi\",\n  \"year\": 2017,\n  \"sequential\": \"10\",\n  \"trilogy\": \"sequel\"\n}",
+      "form": []
+    },
     "tests": []
   }
 ]
