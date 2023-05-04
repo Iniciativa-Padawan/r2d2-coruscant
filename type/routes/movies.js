@@ -8,10 +8,10 @@ router.get('/movies', (req, res) => {
 })
 
 router.get('/movies/trilogy/:trilogy', (req, res) => {
-  const movies = moviesRepo.getMoviesByTrilogia(req.params.trilogy)
+  const movies = moviesRepo.getMoviesBytrilogy(req.params.trilogy)
 
   if (movies.length == 0)
-    res.status(404).send('Trilogia não encontrada')
+    res.status(404).send('trilogy não encontrada')
   else
     res.send(movies)
 })

@@ -4,28 +4,28 @@ function getMovies() {
   return movies
 }
 
-const getMoviesByTrilogia = (trilogia) => getMovies().filter(movie => movie.trilogia == trilogia)
+const getMoviesBytrilogy = (trilogy) => getMovies().filter(movie => movie.trilogy == trilogy)
 
 function ordemAlfabetica() {
-  const ordemAlfabetica = movies.filter(filme => filme.nomeDoFilme).sort((a, b) => a.nomeDoFilme.localeCompare(b.nomeDoFilme))
+  const ordemAlfabetica = movies.filter(filme => filme.name).sort((a, b) => a.name.localeCompare(b.name))
 
   return ordemAlfabetica
 }
 
 function ordemSequencial() {
-  const ordemSequencial = movies.filter(filme => filme.sequencialFranquia).sort((a, b) => {
-    if (a.sequencialFranquia < b.sequencialFranquia) return -1
+  const ordemSequencial = movies.filter(filme => filme.sequential).sort((a, b) => {
+    if (a.sequential < b.sequential) return -1
   })
 
   return ordemSequencial
 }
 
 function ordemLancamento() {
-  const ordemLanc = movies.filter(filme => filme.anoDeLancamento).sort((a, b) => {
-    if (a.anoDeLancamento < b.anoDeLancamento) return -1
+  const ordemLanc = movies.filter(filme => filme.year).sort((a, b) => {
+    if (a.year < b.year) return -1
   })
 
   return ordemLanc
 }
 
-module.exports = { ordemAlfabetica, ordemLancamento, ordemSequencial, getMovies, getMoviesByTrilogia }
+module.exports = { ordemAlfabetica, ordemLancamento, ordemSequencial, getMovies, getMoviesBytrilogy }

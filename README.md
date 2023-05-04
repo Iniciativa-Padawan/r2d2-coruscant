@@ -54,7 +54,7 @@
       			]
       }
       ```
-    - Onde **sequential** é a ordem que você considera que o filme deve ser assistido e **type** é a qual trilogia o filme pertence, sendo possíveis:
+    - Onde **sequential** é a ordem que você considera que o filme deve ser assistido e **type** é a qual trilogy o filme pertence, sendo possíveis:
       - Classic
       - prequel
       - sequel

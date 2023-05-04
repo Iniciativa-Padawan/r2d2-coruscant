@@ -1,51 +1,88 @@
-const movies = require('./db.json')
+const { PrismaClient } = require(".prisma/client")
 
-function getMovies() {
+const prisma = new PrismaClient()
+
+const getMovies = async () => {
+  const movies = await prisma.movie.findMany()
   return movies
 }
 
-const getMoviesByTrilogia = (trilogia) => getMovies().filter(movie => movie.trilogia == trilogia)
-
-const addMovie = (movie) => getMovies().push(movie)
-
-const updateMovie = (movie, sequencial) => getMovies().splice(findMovieIndex(sequencial), 1, movie)
-
-const deleteLastMovie = () => getMovies().pop()
-
-const deleteMovieBySequencial = (sequencial) => getMovies().splice(findMovieIndex(sequencial), 1)
-
-const findMovieIndex = (sequencial) => getMovies().findIndex(movie => movie.sequencialFranquia == sequencial)
-
-function ordemAlfabetica() {
-  const ordemAlfabetica = movies.filter(filme => filme.nomeDoFilme).sort((a, b) => a.nomeDoFilme.localeCompare(b.nomeDoFilme))
-
-  return ordemAlfabetica
+const getMovieById = async (id) => {
+  const movie = await prisma.movie.findUnique({
+    where: {
+      id: id
+    }
+  })
+  return movie
 }
 
+
+const getMoviesByTrilogy = async (trilogy) => {
+  const movies = await prisma.movie.findMany({
+    where: {
+      trilogy: trilogy
+    }
+  })
+  return movies
+}
+
+const getMoviesOrderByName = async () => {
+  const movies = await prisma.movie.findMany({
+    orderBy: {
+      name: "asc"
+    }
+  })
+  return movies
+}
+
+const addMovie = async (movie) => {
+  await prisma.movie.create({
+    data: movie
+  })
+}
+
+const updateMovie = async (movie, id) => {
+  await prisma.movie.update({
+    where: {
+      id: id
+    },
+    data: movie
+  })
+}
+
+const deleteMovie = async (id) => {
+  await prisma.movie.delete({
+    where: {
+      id: id
+    }
+  })
+}
+
+// ----------------------------------------------------
+
+
 function ordemSequencial() {
-  const ordemSequencial = movies.filter(filme => filme.sequencialFranquia).sort((a, b) => {
-    if (a.sequencialFranquia < b.sequencialFranquia) return -1
+  const ordemSequencial = movies.filter(filme => filme.sequential).sort((a, b) => {
+    if (a.sequential < b.sequential) return -1
   })
 
   return ordemSequencial
 }
 
 function ordemLancamento() {
-  const ordemLanc = movies.filter(filme => filme.anoDeLancamento).sort((a, b) => {
-    if (a.anoDeLancamento < b.anoDeLancamento) return -1
+  const ordemLanc = movies.filter(filme => filme.year).sort((a, b) => {
+    if (a.year < b.year) return -1
   })
 
   return ordemLanc
 }
 
 module.exports = {
-  ordemAlfabetica,
-  ordemLancamento,
-  ordemSequencial,
   getMovies,
-  getMoviesByTrilogia,
+  getMovieById,
+  getMoviesByTrilogy,
+  getMoviesOrderByName,
   addMovie,
-  deleteLastMovie,
   updateMovie,
-  deleteMovieBySequencial
+  deleteMovie
 }
