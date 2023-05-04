@@ -4,8 +4,9 @@ const router = express.Router()
 const listaFilmes = require('./db.json')
 
 // requisição da lista
-router.get('/movies', (req, res) => {
-    res.send(functions.todosOsFilmes())
+router.get('/movies', async (req, res) => {
+    const movies = await functions.allMovies()
+    res.send(movies)
 })
 
 // requisição ordem alfabética
@@ -41,6 +42,15 @@ router.post('/movies', (req, res) => {
 
 router.delete('/movies', (req, res) => {
     functions.removerFilme()
+
+    res.send(functions.todosOsFilmes())
+})
+
+router.delete('/movies/removerfilme/:sequential', (req, res) => {
+    const sequential = req.params.sequential
+
+    console.log(sequential)
+    functions.removerFilmeSeq(sequential)
 
     res.send(functions.todosOsFilmes())
 })

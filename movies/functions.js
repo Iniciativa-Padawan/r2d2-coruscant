@@ -1,7 +1,10 @@
-const listaFilmes = require('./db.json')
+const { PrismaClient } = require("@prisma/client")
 
-function todosOsFilmes() {
-    return listaFilmes
+const prisma = new PrismaClient()
+
+const allMovies = async () => {
+    const movies = await prisma.movie.findMany()
+    return movies
 }
 
 function addFilme(filmeASerAdicionado) {
@@ -10,6 +13,20 @@ function addFilme(filmeASerAdicionado) {
 
 function removerFilme() {
     listaFilmes.pop()
+}
+
+function removerFilmeSeq(filmeASerRemovido) {
+    var indexFilme = todosOsFilmes().findIndex((filme) => {
+        return filme.sequential == filmeASerRemovido
+    })
+
+    console.log(indexFilme)
+
+    if (indexFilme !== -1) {
+        listaFilmes.splice(indexFilme, 1)
+    } else {
+        console.log('Sequencial não encontrada')
+    }
 }
 
 function ordemAlfabetica() {
@@ -48,4 +65,4 @@ function mapeandoObjeto(objetoFiltrado) {
     })
 }
 
-module.exports = {todosOsFilmes, ordemAlfabetica, ordemSequencial, ordemLancamento, trilogia, addFilme, removerFilme}
+module.exports = {ordemAlfabetica, ordemSequencial, ordemLancamento, trilogia, addFilme, removerFilme, removerFilmeSeq, allMovies}
