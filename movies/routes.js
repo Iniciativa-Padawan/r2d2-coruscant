@@ -82,7 +82,11 @@ router.get("/movies/movie-release", async (req, res) => {
 router.get("/movies/trilogy/:trilogy", async (req, res) => {
   const movies = await functions.getTrilogy(req.params.trilogy);
 
-  res.send(movies);
+  if (movies.length > 0) {
+    res.send(movies);
+  } else {
+    res.status(400).send('Trilogia não encontrada, tente: classic, prequel, sequel ou spinoff.')
+  }
 });
 
 module.exports = router;
