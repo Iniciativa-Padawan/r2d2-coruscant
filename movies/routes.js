@@ -43,7 +43,7 @@ router.delete("/movies/:id", async (req, res) => {
 router.put("/movies/:id", schemas.movieSchema(), async (req, res) => {
   const result = validationResult(req);
   if (result.errors.length > 0) {
-    res.status(404).send({ errors: result.errors.map((erro) => erro.msg) });
+    res.status(400).send({ errors: result.errors.map((erro) => erro.msg) });
   } else {
     await functions.updateMovie(req.body, req.params.id);
     const movies = await functions.allMovies();

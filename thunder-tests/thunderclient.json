@@ -46,11 +46,11 @@
     "colId": "e02290d2-6bb9-4dc2-b99b-6426480b4439",
     "containerId": "",
     "name": "trilogy",
-    "url": "localhost:4000/movies/trilogy/spinoff",
+    "url": "localhost:4000/movies/trilogy/spinofff",
     "method": "GET",
     "sortNum": 70000,
     "created": "2023-05-01T19:36:27.245Z",
-    "modified": "2023-05-04T15:17:59.695Z",
+    "modified": "2023-05-05T14:17:29.023Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -107,16 +107,16 @@
     "colId": "e02290d2-6bb9-4dc2-b99b-6426480b4439",
     "containerId": "",
     "name": "update-movie",
-    "url": "localhost:4000/movies/clh9667sg0002v1zczhl2omqo",
+    "url": "localhost:4000/movies/clh94eojh0000v1cwlcuo5prr",
     "method": "PUT",
     "sortNum": 30000,
     "created": "2023-05-04T13:33:10.099Z",
-    "modified": "2023-05-04T14:06:48.160Z",
+    "modified": "2023-05-05T14:30:56.825Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"Os Últimos Jedi\",\n  \"year\": 2017,\n  \"sequential\": \"10\",\n  \"trilogy\": \"sequel\"\n}",
+      "raw": "{\n  \"name\": \"Ataque dos clones\",\n  \"year\": 2002,\n  \"sequential\": \"2\",\n  \"trilogy\": \"prequel\"\n}",
       "form": []
     },
     "tests": []

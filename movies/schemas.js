@@ -42,7 +42,7 @@ const movieSchema = () =>
         negated: true,
         errorMessage: "Trilogia do filme é obrigatório",
       },
-    },
+    }
   });
 
 module.exports = { movieSchema };
