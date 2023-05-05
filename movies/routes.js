@@ -3,6 +3,9 @@ const express = require("express");
 const router = express.Router();
 const { validationResult } = require("express-validator");
 const schemas = require("./schemas");
+const { PrismaClient } = require("@prisma/client");
+
+const prisma = new PrismaClient();
 
 // requisição da lista completa de filmes
 router.get("/movies", async (req, res) => {
@@ -17,8 +20,11 @@ router.post("/movies", schemas.movieSchema(), async (req, res) => {
   const result = validationResult(req);
   if (result.errors.length > 0) {
     res.status(404).send({ errors: result.errors.map((erro) => erro.msg) });
-  } else {
-    await functions.addMovie(req.body);
+  } if (functions.existentMovie(req.body)) {
+    res.status(400).send(`Filme: ${req.body.name} já inserido.`)
+  }
+  else {
+    await functions.addMovie(req.body)
     const movies = await functions.allMovies();
     res.status(201).send(movies);
   }
@@ -68,15 +74,15 @@ router.get("/movies/sequential", async (req, res) => {
 
 //requisição ordem lançamento
 router.get("/movies/movie-release", async (req, res) => {
-    const movies = await functions.movieReleaseOrder()
-    res.send(movies);
+  const movies = await functions.movieReleaseOrder();
+  res.send(movies);
 });
 
 //requisição trilogia
 router.get("/movies/trilogy/:trilogy", async (req, res) => {
-    const movies = await functions.getTrilogy(req.params.trilogy)
+  const movies = await functions.getTrilogy(req.params.trilogy);
 
-    res.send(movies)
+  res.send(movies);
 });
 
 module.exports = router;

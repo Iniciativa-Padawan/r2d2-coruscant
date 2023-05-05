@@ -62,14 +62,14 @@
     "name": "add-movie",
     "url": "localhost:4000/movies/",
     "method": "POST",
-    "sortNum": 80000,
+    "sortNum": 22500,
     "created": "2023-05-01T23:21:01.954Z",
-    "modified": "2023-05-04T13:35:10.473Z",
+    "modified": "2023-05-05T13:42:41.635Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"Os Últimos Jedi\",\n  \"year\": 2028,\n  \"sequential\": \"10\",\n  \"trilogy\": \"sequel\"\n}",
+      "raw": "{\n  \"name\": \"a vingança DoS Sith\",\n  \"year\": 2005,\n  \"sequential\": \"3\",\n  \"trilogy\": \"prequel\"\n}",
       "form": []
     },
     "tests": []
@@ -79,11 +79,11 @@
     "colId": "e02290d2-6bb9-4dc2-b99b-6426480b4439",
     "containerId": "",
     "name": "delete-movie",
-    "url": "localhost:4000/movies/clh94jvvg0000v1psp5fqxwcn",
+    "url": "localhost:4000/movies/clh9zffwh0000v1t03slhabmu",
     "method": "DELETE",
     "sortNum": 25000,
     "created": "2023-05-01T23:36:02.343Z",
-    "modified": "2023-05-04T13:48:09.628Z",
+    "modified": "2023-05-05T13:36:03.702Z",
     "headers": [],
     "params": [],
     "tests": []

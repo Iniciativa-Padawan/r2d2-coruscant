@@ -15,6 +15,26 @@ const addMovie = async (movie) => {
   });
 };
 
+//função que retorna se um filme já existe na lista
+const existentMovie = async(movie) => {
+  const exists = await prisma.movie.findMany({
+    where: {
+      name: {
+        contains: movie.name,
+        mode: 'insensitive'
+      }
+    }
+  })
+
+  if (exists) {
+    try{ 
+      throw new Error(`filme: ${movie.name} já inserido`)
+    } catch(error){
+      console.log(error.message)
+    }
+  }
+}
+
 // função que remove um filme
 const removeMovie = async (id) => {
   await prisma.movie.delete({
@@ -48,8 +68,8 @@ const alphabeticalOrder = async () => {
 const sequentialOrder = async () => {
   const movies = await prisma.movie.findMany({
     orderBy: {
-      sequential: Number.parseInt().asc
-    }
+      sequential: Number.parseInt().asc,
+    },
   });
   return movies;
 };
@@ -58,21 +78,23 @@ const sequentialOrder = async () => {
 const movieReleaseOrder = async () => {
   const movies = await prisma.movie.findMany({
     orderBy: {
-      year: 'asc'
-    }
-  })
-  return movies
-}
+      year: "asc",
+    },
+  });
+  return movies;
+};
 
 // função que retorna a trilogia solicitada
 const getTrilogy = async (trilogy) => {
   const movies = await prisma.movie.findMany({
     where: {
-      trilogy: trilogy
-    }
-  })
-  return movies
-}
+      trilogy: trilogy,
+    },
+  });
+  return movies;
+};
+
+
 
 module.exports = {
   allMovies,
@@ -82,5 +104,6 @@ module.exports = {
   alphabeticalOrder,
   sequentialOrder,
   movieReleaseOrder,
-  getTrilogy
+  getTrilogy,
+  existentMovie
 };
