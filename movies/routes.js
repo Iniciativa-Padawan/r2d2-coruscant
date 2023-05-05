@@ -1,63 +1,82 @@
-const functions = require('./functions')
-const express = require('express')
-const router = express.Router()
-const listaFilmes = require('./db.json')
+const functions = require("./functions");
+const express = require("express");
+const router = express.Router();
+const { validationResult } = require("express-validator");
+const schemas = require("./schemas");
 
 // requisição da lista completa de filmes
-router.get('/movies', async (req, res) => {
-    const movies = await functions.allMovies()
-    res.send(movies)
-})
+router.get("/movies", async (req, res) => {
+  const movies = await functions.allMovies();
+
+  if (movies.length > 0) res.send(movies);
+  else res.status(404).send("Não foi encontrado nenhum filme");
+});
 
 // requisição para adicionar um novo filme
-router.post('/movies', async (req, res) => {
-    await functions.addMovie(req.body)
-    const movies = await functions.allMovies()
-    res.send(movies)
-})
+router.post("/movies", schemas.movieSchema(), async (req, res) => {
+  const result = validationResult(req);
+  if (result.errors.length > 0) {
+    res.status(404).send({ errors: result.errors.map((erro) => erro.msg) });
+  } else {
+    await functions.addMovie(req.body);
+    const movies = await functions.allMovies();
+    res.status(201).send(movies);
+  }
+});
 
 // requisição para deletar um filme
-router.delete('/movies/:id', async (req, res) => {
-    await functions.removeMovie(req.params.id)
+router.delete("/movies/:id", async (req, res) => {
+  await functions.removeMovie(req.params.id);
 
-    const movies = await functions.allMovies()
+  const movies = await functions.allMovies();
 
-    res.send(movies)
-})
+  res.status(200).send(movies);
+});
 
 // requisição para atualizar um filme
-router.put('movies/:id', async (req, res) => {
-    await functions.updateMovie(req.params.id, req.body)
-    const movies = await functions.allMovies()
+router.put("/movies/:id", schemas.movieSchema(), async (req, res) => {
+  const result = validationResult(req);
+  if (result.errors.length > 0) {
+    res.status(404).send({ errors: result.errors.map((erro) => erro.msg) });
+  } else {
+    await functions.updateMovie(req.body, req.params.id);
+    const movies = await functions.allMovies();
 
-    res.send(movies)
-})
+    res.status(200).send(movies);
+  }
+});
+
 // requisição ordem alfabética
-router.get('/movies/alphabetical', (req, res) => {
-    res.send(functions.ordemAlfabetica())
-})
+router.get("/movies/alphabetical", async (req, res) => {
+  const movies = await functions.alphabeticalOrder();
+  if (movies.length > 0) {
+    res.send(movies);
+  } else {
+    res.status(404).send("Nenhum filme foi encontrado.");
+  }
+});
 
 // requisição ordem sequencial
-router.get('/movies/sequential', (req, res) => {
-    res.send(functions.ordemSequencial())
-})
+router.get("/movies/sequential", async (req, res) => {
+  const movies = await functions.sequentialOrder();
+  if (movies.length > 0) {
+    res.send(movies);
+  } else {
+    res.status(404).send("Nenhum filme foi encontrado.");
+  }
+});
+
 //requisição ordem lançamento
-router.get('/movies/movie-release', (req, res) => {
-    res.send(functions.ordemLancamento())
-})
+router.get("/movies/movie-release", async (req, res) => {
+    const movies = await functions.movieReleaseOrder()
+    res.send(movies);
+});
+
 //requisição trilogia
-router.get('/movies/trilogy/:trilogy', (req, res) => {
-    const trilogy = req.params.trilogy
-    const movies = listaFilmes.find(movie => movie.trilogy === trilogy)
-    if (!movies){
-        res.status(404).send('Trilogia não encontrada, tente novamente');
-        return;
-    }else {
-        res.send(functions.trilogia(trilogy))
-    }
-})
+router.get("/movies/trilogy/:trilogy", async (req, res) => {
+    const movies = await functions.getTrilogy(req.params.trilogy)
 
+    res.send(movies)
+});
 
-
-
-module.exports = router
+module.exports = router;

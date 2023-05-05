@@ -1,71 +1,86 @@
-const { PrismaClient } = require("@prisma/client")
+const { PrismaClient } = require("@prisma/client");
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
 
-// função que busca todos os filmes do banco de dados
+// função que busca todos os filmes
 const allMovies = async () => {
-    const movies = await prisma.movie.findMany()
-    return movies
-}
+  const movies = await prisma.movie.findMany();
+  return movies;
+};
 
-// função que adiciona um filme ao banco de dados
+// função que adiciona um filme
 const addMovie = async (movie) => {
-    await prisma.movie.create({
-        data: movie
-    })
-}
+  await prisma.movie.create({
+    data: movie,
+  });
+};
 
+// função que remove um filme
 const removeMovie = async (id) => {
-    await prisma.movie.delete({
-        where: {
-            id: id
-        }
-    })
-}
+  await prisma.movie.delete({
+    where: {
+      id: id,
+    },
+  });
+};
 
+// função que atualiza um ou mais dados de um filme
 const updateMovie = async (movie, id) => {
-    await prisma.movie.update({
-        where: {
-            id: id
-        },
-        data: movie
-    })
+  await prisma.movie.update({
+    where: {
+      id: id,
+    },
+    data: movie,
+  });
+};
+
+// função que retorna a lista em ordem alfabética
+const alphabeticalOrder = async () => {
+  const movies = await prisma.movie.findMany({
+    orderBy: {
+      name: "asc",
+    },
+  });
+  return movies;
+};
+
+// função que retorna a lista em ordem senquencial
+const sequentialOrder = async () => {
+  const movies = await prisma.movie.findMany({
+    orderBy: {
+      sequential: Number.parseInt().asc
+    }
+  });
+  return movies;
+};
+
+// função que retorna a lista em ordem de lançamento
+const movieReleaseOrder = async () => {
+  const movies = await prisma.movie.findMany({
+    orderBy: {
+      year: 'asc'
+    }
+  })
+  return movies
 }
 
-function ordemAlfabetica() {
-    const ordemAlfabetica = listaFilmes.filter(filme => filme.name).sort((a, b) => a.name.localeCompare(b.name))
-
-    return ordemAlfabetica
+// função que retorna a trilogia solicitada
+const getTrilogy = async (trilogy) => {
+  const movies = await prisma.movie.findMany({
+    where: {
+      trilogy: trilogy
+    }
+  })
+  return movies
 }
 
-function ordemSequencial() {
-    const ordemSequencial = listaFilmes.filter(filme => filme.sequential).sort((a, b) => {
-        if (a.sequential < b.sequential) return -1
-    })
-
-    return ordemSequencial
-}
-
-function ordemLancamento() {
-    const ordemLanc = listaFilmes.filter(filme => filme.year).sort((a, b) => {
-        if (a.year < b.year) return -1
-    })
-
-    return ordemLanc
-}
-
-function trilogia(nomeTrilogia) {
-    const trilogiaFiltrada = listaFilmes.filter(filme => filme.trilogy === nomeTrilogia)
-
-    const mapeamentoNome = mapeandoObjeto(trilogiaFiltrada)
-    
-    return mapeamentoNome
-}
-
-function mapeandoObjeto(objetoFiltrado) {
-    return objetoFiltrado.map((filme) => {
-        return filme
-    })
-}
-
-module.exports = {ordemAlfabetica, ordemSequencial, ordemLancamento, trilogia, allMovies, addMovie, removeMovie, updateMovie}
+module.exports = {
+  allMovies,
+  addMovie,
+  removeMovie,
+  updateMovie,
+  alphabeticalOrder,
+  sequentialOrder,
+  movieReleaseOrder,
+  getTrilogy
+};
