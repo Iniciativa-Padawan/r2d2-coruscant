@@ -1,61 +1,156 @@
-const movies = require("./db.json");
+const { PrismaClient } = require("@prisma/client");
 
-function getMovies() {
+const prisma = new PrismaClient();
+
+/* GET METHODS */
+
+const getAllMovies = async () => {
+  const movies = await prisma.movie.findMany();
   return movies;
-}
+};
 
-const getMoviesByTrilogia = (trilogia) =>
-  getMovies().filter((movie) => movie.trilogia == trilogia);
+const getMovieById = async (id) => {
+  const movie = await prisma.movie.findUnique({
+    where: {
+      id: id,
+    },
+  });
+  return movie;
+};
 
-const addMovie = (movie) => getMovies().push(movie);
+const getMovieByName = async (name) => {
+  const movie = await prisma.movie.findUnique({
+    where: {
+      name: name,
+    },
+  });
+  return movie;
+};
 
-const updateMovie = (movie, sequencial) =>
-  getMovies().splice(findMovieIndex(sequencial), 1, movie);
+const getMovieByYear = async (year) => {
+  const movie = await prisma.movie.findUnique({
+    where: {
+      year: year,
+    },
+  });
+  return movie;
+};
 
-const deleteLastMovie = () => getMovies().pop();
+const getMovieBySequential = async (sequential) => {
+  const movie = await prisma.movie.findUnique({
+    where: {
+      sequential: sequential,
+    },
+  });
+  return movie;
+};
 
-const deleteMovieBySequencial = (sequencial) =>
-  getMovies().splice(findMovieIndex(sequencial), 1);
+const getMoviesByTrilogy = async (trilogy) => {
+  const movies = await prisma.movie.findUnique({
+    where: {
+      trilogy: trilogy,
+    },
+  });
+  return movies;
+};
 
-const findMovieIndex = (sequencial) =>
-  getMovies().findIndex((movie) => movie.sequencialFranquia == sequencial);
+const getMoviesOrderByNameAsc = async () => {
+  const movies = await prisma.movie.findMany({
+    orderBy: {
+      name: "asc",
+    },
+  });
+  return movies;
+};
 
-function ordemAlfabetica() {
-  const ordemAlfabetica = movies
-    .filter((filme) => filme.nomeDoFilme)
-    .sort((a, b) => a.nomeDoFilme.localeCompare(b.nomeDoFilme));
+const getMoviesOrderByNameDesc = async () => {
+  const movies = await prisma.movie.findMany({
+    orderBy: {
+      name: "desc",
+    },
+  });
+  return movies;
+};
 
-  return ordemAlfabetica;
-}
+const getMoviesOrderByYearAsc = async () => {
+  const movies = await prisma.movie.findMany({
+    orderBy: {
+      year: "asc",
+    },
+  });
+  return movies;
+};
 
-function ordemSequencial() {
-  const ordemSequencial = movies
-    .filter((filme) => filme.sequencialFranquia)
-    .sort((a, b) => {
-      if (a.sequencialFranquia < b.sequencialFranquia) return -1;
-    });
+const getMoviesOrderByYearDesc = async () => {
+  const movies = await prisma.movie.findMany({
+    orderBy: {
+      year: "desc",
+    },
+  });
+  return movies;
+};
 
-  return ordemSequencial;
-}
+const getMoviesOrderBySequentialAsc = async () => {
+  const movies = await prisma.movie.findMany({
+    orderBy: {
+      sequential: "asc",
+    },
+  });
+  return movies;
+};
 
-function ordemLancamento() {
-  const ordemLanc = movies
-    .filter((filme) => filme.anoDeLancamento)
-    .sort((a, b) => {
-      if (a.anoDeLancamento < b.anoDeLancamento) return -1;
-    });
+const getMoviesOrderBySequentialDesc = async () => {
+  const movies = await prisma.movie.findMany({
+    orderBy: {
+      sequential: "desc",
+    },
+  });
+  return movies;
+};
 
-  return ordemLanc;
-}
+/* POST METHODS */
+
+const createMovie = async (movie) => {
+  await prisma.movie.create({
+    data: movie,
+  });
+};
+
+/* UPDATE METHODS */
+
+const updateMovie = async (movie, id) => {
+  await prisma.movie.update({
+    where: {
+      id: id,
+    },
+    data: movie,
+  });
+};
+
+/* DELETE METHODS */
+
+const deleteMovie = async (id) => {
+  await prisma.movie.delete({
+    where: {
+      id: id,
+    },
+  });
+};
 
 module.exports = {
-  ordemAlfabetica,
-  ordemLancamento,
-  ordemSequencial,
-  getMovies,
-  getMoviesByTrilogia,
-  addMovie,
-  deleteLastMovie,
+  getAllMovies,
+  getMovieById,
+  getMovieByName,
+  getMovieByYear,
+  getMovieBySequential,
+  getMoviesByTrilogy,
+  getMoviesOrderByNameAsc,
+  getMoviesOrderByNameDesc,
+  getMoviesOrderByYearAsc,
+  getMoviesOrderByYearDesc,
+  getMoviesOrderBySequentialAsc,
+  getMoviesOrderBySequentialDesc,
+  createMovie,
   updateMovie,
-  deleteMovieBySequencial,
+  deleteMovie,
 };

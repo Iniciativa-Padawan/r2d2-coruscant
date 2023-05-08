@@ -1,0 +1,19 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgres://r2d2:TgtETGTflafkwzWh48kYdlqssmttZzov@dpg-ch9ee7pmbg57ch46iue0-a.oregon-postgres.render.com/r2d2_3wye"
+}
+
+model Movie {
+  id          String @id @default(cuid())
+  name        String
+  year        Int
+  sequential  String
+  trilogy     String
+}

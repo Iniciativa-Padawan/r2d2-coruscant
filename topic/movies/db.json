@@ -1,68 +1,68 @@
 [
   {
-    "nomeDoFilme": "Ataque dos Clones",
-    "anoDeLancamento": 2002,
-    "sequencialFranquia": 2,
-    "trilogia": "prequel"
+    "name": "Ataque dos Clones",
+    "year": 2002,
+    "sequential": 2,
+    "trilogy": "prequel"
   },
   {
-    "nomeDoFilme": "Solo: Uma História Star Wars",
-    "anoDeLancamento": 2018,
-    "sequencialFranquia": 4,
-    "trilogia": "spinoff"
+    "name": "Solo: Uma História Star Wars",
+    "year": 2018,
+    "sequential": 4,
+    "trilogy": "spinoff"
   },
   {
-    "nomeDoFilme": "A Vingança dos Sith",
-    "anoDeLancamento": 2005,
-    "sequencialFranquia": 3,
-    "trilogia": "prequel"
+    "name": "A Vingança dos Sith",
+    "year": 2005,
+    "sequential": 3,
+    "trilogy": "prequel"
   },
   {
-    "nomeDoFilme": "Rogue One: Uma História Star Wars",
-    "anoDeLancamento": 2016,
-    "sequencialFranquia": 5,
-    "trilogia": "spinoff"
+    "name": "Rogue One: Uma História Star Wars",
+    "year": 2016,
+    "sequential": 5,
+    "trilogy": "spinoff"
   },
   {
-    "nomeDoFilme": "A Ameaça Fantasma",
-    "anoDeLancamento": 1999,
-    "sequencialFranquia": 1,
-    "trilogia": "prequel"
+    "name": "A Ameaça Fantasma",
+    "year": 1999,
+    "sequential": 1,
+    "trilogy": "prequel"
   },
   {
-    "nomeDoFilme": "O Despertar da Força",
-    "anoDeLancamento": 2015,
-    "sequencialFranquia": 9,
-    "trilogia": "sequel"
+    "name": "O Despertar da Força",
+    "year": 2015,
+    "sequential": 9,
+    "trilogy": "sequel"
   },
   {
-    "nomeDoFilme": "Uma nova esperança",
-    "anoDeLancamento": 1977,
-    "sequencialFranquia": 6,
-    "trilogia": "Clássica"
+    "name": "Uma nova esperança",
+    "year": 1977,
+    "sequential": 6,
+    "trilogy": "Clássica"
   },
   {
-    "nomeDoFilme": "Os Últimos Jedi",
-    "anoDeLancamento": 2017,
-    "sequencialFranquia": 10,
-    "trilogia": "sequel"
+    "name": "Os Últimos Jedi",
+    "year": 2017,
+    "sequential": 10,
+    "trilogy": "sequel"
   },
   {
-    "nomeDoFilme": "O Retorno de Jedi",
-    "anoDeLancamento": 1983,
-    "sequencialFranquia": 8,
-    "trilogia": "Clássica"
+    "name": "O Retorno de Jedi",
+    "year": 1983,
+    "sequential": 8,
+    "trilogy": "Clássica"
   },
   {
-    "nomeDoFilme": "O Império Contra-Ataca",
-    "anoDeLancamento": 1980,
-    "sequencialFranquia": 7,
-    "trilogia": "Clássica"
+    "name": "O Império Contra-Ataca",
+    "year": 1980,
+    "sequential": 7,
+    "trilogy": "Clássica"
   },
   {
-    "nomeDoFilme": "A Ascensão Skywalker",
-    "anoDeLancamento": 2019,
-    "sequencialFranquia": 11,
-    "trilogia": "sequel"
+    "name": "A Ascensão Skywalker",
+    "year": 2019,
+    "sequential": 11,
+    "trilogy": "sequel"
   }
 ]

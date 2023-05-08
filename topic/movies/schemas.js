@@ -2,28 +2,28 @@ const { checkSchema } = require("express-validator");
 
 const movieSchema = () =>
   checkSchema({
-    nomeDoFilme: {
+    name: {
       isEmpty: {
         negated: true,
-        errorMessage: "Nome do filme é obrigatório",
+        errorMessage: "Name is required",
       },
     },
-    anoDeLancamento: {
+    year: {
       isEmpty: {
         negated: true,
-        errorMessage: "Ano de lançamennto do filme é obrigatório",
+        errorMessage: "Year is required",
       },
     },
-    sequencialFranquia: {
+    sequential: {
       isEmpty: {
         negated: true,
-        errorMessage: "Sequencial do filme é obrigatório",
+        errorMessage: "Sequential is required",
       },
     },
-    trilogia: {
+    trilogy: {
       isEmpty: {
         negated: true,
-        errorMessage: "Trilogia do filme é obrigatório",
+        errorMessage: "Trilogy is required",
       },
     },
   });
