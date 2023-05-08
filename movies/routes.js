@@ -20,11 +20,12 @@ router.post("/movies", schemas.movieSchema(), async (req, res) => {
   const result = validationResult(req);
   if (result.errors.length > 0) {
     res.status(404).send({ errors: result.errors.map((erro) => erro.msg) });
-  } if (functions.existentMovie(req.body)) {
-    res.status(400).send(`Filme: ${req.body.name} já inserido.`)
   }
-  else {
-    await functions.addMovie(req.body)
+  const exists = await functions.existentMovie(req.body);
+  if (exists.length > 0) {
+    res.status(400).send(`Filme: ${req.body.name} já inserido.`);
+  } else {
+    await functions.addMovie(req.body);
     const movies = await functions.allMovies();
     res.status(201).send(movies);
   }
@@ -85,7 +86,11 @@ router.get("/movies/trilogy/:trilogy", async (req, res) => {
   if (movies.length > 0) {
     res.send(movies);
   } else {
-    res.status(400).send('Trilogia não encontrada, tente: classic, prequel, sequel ou spinoff.')
+    res
+      .status(400)
+      .send(
+        "Trilogia não encontrada, tente: classic, prequel, sequel ou spinoff."
+      );
   }
 });
 

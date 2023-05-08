@@ -25,14 +25,7 @@ const existentMovie = async(movie) => {
       }
     }
   })
-
-  if (exists) {
-    try{ 
-      throw new Error(`filme: ${movie.name} já inserido`)
-    } catch(error){
-      console.log(error.message)
-    }
-  }
+  return exists
 }
 
 // função que remove um filme

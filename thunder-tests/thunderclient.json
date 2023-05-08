@@ -64,12 +64,12 @@
     "method": "POST",
     "sortNum": 22500,
     "created": "2023-05-01T23:21:01.954Z",
-    "modified": "2023-05-05T13:42:41.635Z",
+    "modified": "2023-05-08T22:10:35.682Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"a vingança DoS Sith\",\n  \"year\": 2005,\n  \"sequential\": \"3\",\n  \"trilogy\": \"prequel\"\n}",
+      "raw": "{\n  \"name\": \"fasdsasçksakjdlfkasadaeeed\",\n  \"year\": 2005,\n  \"sequential\": \"3\",\n  \"trilogy\": \"prequel\"\n}",
       "form": []
     },
     "tests": []
@@ -79,11 +79,11 @@
     "colId": "e02290d2-6bb9-4dc2-b99b-6426480b4439",
     "containerId": "",
     "name": "delete-movie",
-    "url": "localhost:4000/movies/clh9zffwh0000v1t03slhabmu",
+    "url": "localhost:4000/movies/clhfdfg8y0000v1nk3x0e63cx",
     "method": "DELETE",
     "sortNum": 25000,
     "created": "2023-05-01T23:36:02.343Z",
-    "modified": "2023-05-05T13:36:03.702Z",
+    "modified": "2023-05-08T22:13:50.294Z",
     "headers": [],
     "params": [],
     "tests": []
