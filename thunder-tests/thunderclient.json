@@ -18,11 +18,11 @@
     "colId": "e783d3ce-4f9a-48b5-b167-992d18e80b8d",
     "containerId": "c966c619-79fc-48eb-9afc-036255cf2eb4",
     "name": "alphabetical",
-    "url": "{{url}}/movies/alphabetical",
+    "url": "{{url}}/movies/orderbyname/asc",
     "method": "GET",
     "sortNum": 20000,
     "created": "2023-04-24T23:32:31.752Z",
-    "modified": "2023-04-24T23:42:06.955Z",
+    "modified": "2023-05-08T14:25:36.696Z",
     "headers": [],
     "params": [],
     "tests": []
