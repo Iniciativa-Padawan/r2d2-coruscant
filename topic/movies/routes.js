@@ -26,46 +26,6 @@ router.get("/movies/:id", async (req, res) => {
   }
 });
 
-router.get("/movies/:name", async (req, res) => {
-  const movie = await controller.getMovieByName(req.params.name);
-
-  if (!movie) {
-    res.status(404).send("Movie not found");
-  } else {
-    res.send(movie);
-  }
-});
-
-router.get("/movies/year/:year", async (req, res) => {
-  const movie = await controller.getMovieByYear(req.params.year);
-
-  if (!movie) {
-    res.status(404).send("Movie not found");
-  } else {
-    res.send(movie);
-  }
-});
-
-router.get("/movies/sequential/:sequential", async (req, res) => {
-  const movie = await controller.getMovieBySequential(req.params.sequential);
-
-  if (!movie) {
-    res.status(404).send("Movie not found");
-  } else {
-    res.send(movie);
-  }
-});
-
-router.get("/movies/trilogy/:trilogy", async (req, res) => {
-  const movies = await controller.getMoviesByTrilogy(req.params.trilogy);
-
-  if (movies.length == 0) {
-    res.status(404).send("Trilogy not found");
-  } else {
-    res.send(movies);
-  }
-});
-
 router.get("/movies/orderbyname/asc", async (req, res) => {
   const movies = await controller.getMoviesOrderByNameAsc();
 
@@ -96,7 +56,7 @@ router.get("/movies/orderbyyear/asc", async (req, res) => {
   }
 });
 
-router.get("/movies/orderbyyear/asc", async (req, res) => {
+router.get("/movies/orderbyyear/desc", async (req, res) => {
   const movies = await controller.getMoviesOrderByYearDesc();
 
   if (movies.length > 0) {
@@ -116,7 +76,7 @@ router.get("/movies/orderbysequential/asc", async (req, res) => {
   }
 });
 
-router.get("/movies/orderbysequential/asc", async (req, res) => {
+router.get("/movies/orderbysequential/desc", async (req, res) => {
   const movies = await controller.getMoviesOrderBySequentialDesc();
 
   if (movies.length > 0) {

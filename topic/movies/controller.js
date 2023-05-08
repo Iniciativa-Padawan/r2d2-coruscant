@@ -18,42 +18,6 @@ const getMovieById = async (id) => {
   return movie;
 };
 
-const getMovieByName = async (name) => {
-  const movie = await prisma.movie.findUnique({
-    where: {
-      name: name,
-    },
-  });
-  return movie;
-};
-
-const getMovieByYear = async (year) => {
-  const movie = await prisma.movie.findUnique({
-    where: {
-      year: year,
-    },
-  });
-  return movie;
-};
-
-const getMovieBySequential = async (sequential) => {
-  const movie = await prisma.movie.findUnique({
-    where: {
-      sequential: sequential,
-    },
-  });
-  return movie;
-};
-
-const getMoviesByTrilogy = async (trilogy) => {
-  const movies = await prisma.movie.findUnique({
-    where: {
-      trilogy: trilogy,
-    },
-  });
-  return movies;
-};
-
 const getMoviesOrderByNameAsc = async () => {
   const movies = await prisma.movie.findMany({
     orderBy: {
@@ -140,10 +104,6 @@ const deleteMovie = async (id) => {
 module.exports = {
   getAllMovies,
   getMovieById,
-  getMovieByName,
-  getMovieByYear,
-  getMovieBySequential,
-  getMoviesByTrilogy,
   getMoviesOrderByNameAsc,
   getMoviesOrderByNameDesc,
   getMoviesOrderByYearAsc,
