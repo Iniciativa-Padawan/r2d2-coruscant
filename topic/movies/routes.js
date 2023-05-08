@@ -3,6 +3,11 @@ const express = require("express");
 const router = express.Router();
 const { validationResult } = require('express-validator')
 const schemas = require('./schemas')
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('../../swagger.json');
+
+router.use('/', swaggerUi.serve);
+router.get('/', swaggerUi.setup(swaggerDocument));
 
 router.get('/movies', async (req, res) => {
   const movies = await controller.getMovies()

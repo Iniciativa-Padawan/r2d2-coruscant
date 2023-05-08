@@ -1,13 +1,12 @@
 const express = require('express')
-const bodyParser = require('body-parser'); /// <---
+const bodyParser = require('body-parser');
 const movieRoutesTopic = require('./topic/movies/routes')
-const movieRoutesType = require('./type/routes/movies')
+var cors = require('cors')
 
 const app = express()
-app.use(bodyParser.json()) /// <---
-
-app.use('/topic', movieRoutesTopic)
-app.use('/type', movieRoutesType)
+app.options('*', cors())
+app.use(bodyParser.json())
+app.use(movieRoutesTopic)
 
 app.listen(3000, function () {
   console.log('O aplicativo está rodando na porta 3000')
