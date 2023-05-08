@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgres://r2d2:LQeZYBHkWeGFqRKu9JuWGFBGq9jEnAXu@dpg-ch9eeb67avjakq6qbmug-a.oregon-postgres.render.com/r2d2_mht3"
+  url      = env("DATABASE_URL")
 }
 
 model Movie {
