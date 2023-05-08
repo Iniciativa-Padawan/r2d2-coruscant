@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000"
+      "url": "https://r2d2-enyt.onrender.com/"
     }
   ],
   "tags": [

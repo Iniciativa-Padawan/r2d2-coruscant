@@ -2,10 +2,10 @@ const express = require('express')
 const bodyParser = require('body-parser');
 const movieRoutesTopic = require('./topic/movies/routes')
 var cors = require('cors')
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 const app = express()
-app.options('*', cors())
+app.use(cors());
 app.use(bodyParser.json())
 app.use(movieRoutesTopic)
 
