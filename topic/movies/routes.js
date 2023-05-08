@@ -93,8 +93,9 @@ router.post("/movies", schemas.movieSchema(), async (req, res) => {
   if (result.errors.length > 0) {
     res.status(400).send({ errors: result.errors.map((erro) => erro.msg) });
   } else {
-    await controller.createMovie(req.body);
-    res.status(201).send(controller.getAllMovies());
+    const movie = await controller.createMovie(req.body);
+
+    res.status(201).send(movie);
   }
 });
 

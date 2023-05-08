@@ -22,12 +22,12 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2023-05-01T22:57:56.936Z",
-    "modified": "2023-05-08T15:02:19.979Z",
+    "modified": "2023-05-08T22:21:20.267Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "  {\n    \"name\": \"\",\n    \"year\": 1,\n    \"sequential\": 1,\n    \"trilogy\": \"\"\n  }",
+      "raw": "  {\n    \"name\": \"Teste\",\n    \"year\": 1,\n    \"sequential\": 1,\n    \"trilogy\": \"teste\"\n  }",
       "form": []
     },
     "tests": []

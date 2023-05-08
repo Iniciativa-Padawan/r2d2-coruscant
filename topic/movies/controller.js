@@ -54,28 +54,20 @@ const getMoviesOrderByYearDesc = async () => {
   return movies;
 };
 
-const getMoviesOrderBySequentialAsc = async () => {
+const getMoviesOrderBySequential = async (type) => {
   const movies = await prisma.movie.findMany({
     orderBy: {
-      sequential: "asc",
+      sequential: type,
     },
   });
   return movies;
 };
 
-const getMoviesOrderBySequentialDesc = async () => {
-  const movies = await prisma.movie.findMany({
-    orderBy: {
-      sequential: "desc",
-    },
-  });
-  return movies;
-};
 
 /* POST METHODS */
 
 const createMovie = async (movie) => {
-  await prisma.movie.create({
+  return await prisma.movie.create({
     data: movie,
   });
 };
